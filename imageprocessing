@@ -1,0 +1,14 @@
+clear all
+x = imread('surfpicture.JPG');
+
+r = double(x(1:10:end,:,1));
+g = double(x(1:10:end,:,2));
+b = double(x(1:10:end,:,3));
+
+grey = (r+g+b)/3;
+
+greyscaleImage(:,:,1) = grey;
+greyscaleImage(:,:,2) = grey;
+greyscaleImage(:,:,3) = grey;
+
+greyscaleImage = uint8(greyscaleImage);
