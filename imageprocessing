@@ -1,14 +1,14 @@
 clear all
-x = imread('surfpicture.JPG');
+x = imread('surfpicture.JPG'); %saves images as variable x
 
-r = double(x(1:10:end,:,1));
+r = double(x(1:10:end,:,1)); %scales down all red pixels by 10 in the x axis, leaves all columns the same size, and grabs the first 'page'
 g = double(x(1:10:end,:,2));
 b = double(x(1:10:end,:,3));
 
-grey = (r+g+b)/3;
+grey = (r+g+b)/3; %average
 
-greyscaleImage(:,:,1) = grey;
+greyscaleImage(:,:,1) = grey; %new image variable, convert every pixel to grey
 greyscaleImage(:,:,2) = grey;
 greyscaleImage(:,:,3) = grey;
 
-greyscaleImage = uint8(greyscaleImage);
+greyscaleImage = uint8(greyscaleImage); %change data type
